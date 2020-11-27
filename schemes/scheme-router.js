@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
       }
     })
     .catch(err => {
-      res.status(500).json({ message: 'Failed to get schemes' });
+      res.status(500).json({ message: err.message });
     });
 });
 
@@ -42,7 +42,7 @@ router.get('/:id/steps', (req, res) => {
       }
     })
     .catch(err => {
-      res.status(500).json({ message: 'Failed to get steps' });
+      res.status(500).json({ message: err.message });
     });
 });
 
@@ -54,7 +54,7 @@ router.post('/', (req, res) => {
       res.status(201).json(scheme);
     })
     .catch(err => {
-      res.status(500).json({ message: 'Failed to create new scheme' });
+      res.status(500).json({ message: err.message });
     });
 });
 
@@ -74,7 +74,7 @@ router.post('/:id/steps', (req, res) => {
       res.status(201).json(step);
     })
     .catch(err => {
-      res.status(500).json({ message: 'Failed to create new step' });
+      res.status(500).json({ message: err.message });
     });
 });
 
@@ -94,7 +94,7 @@ router.put('/:id', (req, res) => {
       res.json(updatedScheme);
     })
     .catch(err => {
-      res.status(500).json({ message: 'Failed to update scheme' });
+      res.status(500).json({ message: err.message });
     });
 });
 
@@ -110,7 +110,7 @@ router.delete('/:id', (req, res) => {
       }
     })
     .catch(err => {
-      res.status(500).json({ message: 'Failed to delete scheme' });
+      res.status(500).json({ message: err.message });
     });
 });
 
